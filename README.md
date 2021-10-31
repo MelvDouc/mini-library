@@ -12,7 +12,7 @@ tsc --init
 ```
 
 * Edit `tsconfig.json` according to your needs (e.g.):
-```json
+```json5
 {
   "compilerOptions": {
     "target": "ESNext",
@@ -47,7 +47,7 @@ npm i -D typescript babel-cli babel-plugin-transform-es2015-spread preset-env pr
 * Add this script to `package.json` and run it:
 ```json
 {
-  "build": "npx tsc && npx babel js/esnext -d js/es2015
+  "build": "npx tsc && npx babel js/esnext -d js/es2015"
 }
 ```
 --> Compiles TS files and adds an `es2015` directory to the JS (compiled files) directory.
