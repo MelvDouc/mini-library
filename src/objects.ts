@@ -1,12 +1,12 @@
 import { GenericObject } from "./types/types.js";
 
-function deepFreeze(object: object) {
+function freezeDeep(object: object) {
   const propNames = Object.getOwnPropertyNames(object) as (keyof object)[];
 
   for (const propName of propNames) {
     const value = object[propName];
     if (value && typeof value === "object")
-      deepFreeze(value);
+      freezeDeep(value);
   }
 
   return Object.freeze(object);
@@ -45,16 +45,3 @@ function copyDeep(object: GenericObject): GenericObject {
     return { ...acc, [key]: value };
   }, {});
 }
-
-const x = {
-  a: null,
-  b: {
-    c: {
-      d: 0,
-      e: new Map([['a', 5]]),
-      f: [9, { g: NaN }]
-    }
-  }
-};
-const y = copyDeep(x);
-console.log(y.b.c.e);
