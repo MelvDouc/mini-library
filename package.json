@@ -8,7 +8,11 @@
     "clear-compiled": "rmdir js /s /q",
     "build": "npx tsc && npx babel js/esnext -d js/es2015"
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "babel",
+    "npm"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
