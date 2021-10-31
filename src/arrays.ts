@@ -2,48 +2,6 @@ export function distinct(arr: any[]): any[] {
   return [...new Set(arr)];
 }
 
-/*
-
-const teams = ["1", "2", "3", "4", "5", "6"];
-
-function getHalves(teams) {
-  const half = Math.ceil(teams.length / 2);
-  const firstHalf = teams.slice(0, half);
-  const secondHalf = teams.slice(half);
-
-  if (teams.length % 2 === 1)
-    secondHalf.push(null);
-
-  return [firstHalf, secondHalf];
-}
-
-function rotate(firstHalf, secondHalf) {
-  firstHalf.splice(1, 0, secondHalf.shift());
-  secondHalf.push(firstHalf.pop());
-}
-
-function getPairings(teams) {
-  const [firstHalf, secondHalf] = getHalves(teams);
-  const pairings = {};
-  const { length } = teams;
-  const limit = (length % 2 === 0) ? length - 1 : length;
-
-  for (let i = 1; i <= limit; i++) {
-    const round = firstHalf.map((contestant, i) => {
-      return [contestant, secondHalf[i]];
-    });
-    pairings[i] = round;
-    rotate(firstHalf, secondHalf);
-  }
-
-  return pairings;
-}
-
-const pairings = getPairings(teams);
-console.log(pairings);
-
-*/
-
 function getRandomItem(arr: any[]): any {
   return arr[~~(Math.random() * arr.length)];
 }
