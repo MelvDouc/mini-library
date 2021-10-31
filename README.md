@@ -11,7 +11,7 @@ A mock featherweight, ES2015-compatible JS library.
 tsc --init
 ```
 
-* Edit `tsconfig.json` according to your needs (e.g.):
+* Edit `tsconfig.json` to suit your needs (e.g.):
 ```json5
 {
   "compilerOptions": {
