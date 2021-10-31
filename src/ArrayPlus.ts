@@ -1,4 +1,8 @@
 export default class ArrayPlus extends Array {
+  constructor(...items: any) {
+    super(...items);
+  }
+
   public static objectify(keys: string[], values: any[]): object {
     return keys.reduce((acc, key, i) => {
       return { ...acc, [key]: values[i] };
@@ -18,7 +22,7 @@ export default class ArrayPlus extends Array {
     for (const element of this) {
       if (element === needle)
         return true;
-      if (element instanceof ArrayPlus && element.includesDeep(needle))
+      if (Array.isArray(element) && new ArrayPlus(...element).includesDeep(needle))
         return true;
     }
     return false;
